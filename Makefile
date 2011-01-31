@@ -1,4 +1,4 @@
-WAF=python tools/waf-light
+WAF=python2 tools/waf-light
 
 all:
 	@$(WAF) build
@@ -13,28 +13,28 @@ uninstall:
 	@$(WAF) uninstall
 
 test: all
-	python tools/test.py --mode=release simple message
+	python2 tools/test.py --mode=release simple message
 
 test-all: all
-	python tools/test.py --mode=debug,release
+	python2 tools/test.py --mode=debug,release
 
 test-release: all
-	python tools/test.py --mode=release
+	python2 tools/test.py --mode=release
 
 test-debug: all
-	python tools/test.py --mode=debug
+	python2 tools/test.py --mode=debug
 
 test-message: all
-	python tools/test.py message
+	python2 tools/test.py message
 
 test-simple: all
-	python tools/test.py simple
-     
+	python2 tools/test.py simple
+
 test-pummel: all
-	python tools/test.py pummel
-	
+	python2 tools/test.py pummel
+
 test-internet: all
-	python tools/test.py internet
+	python2 tools/test.py internet
 
 # http://rtomayko.github.com/ronn
 # gem install ronn
